@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 namespace Oxide.Plugins
 {
-	[Info("No Duds", "bearr", 1.1)]
+	[Info("No Duds", "bearr", 1.2)]
 	[Description("Prevents explosives from becoming dud")]
 	class NoDuds : RustPlugin
 	{
@@ -45,10 +45,8 @@ namespace Oxide.Plugins
 			}
 			else if (explosive.ShortPrefabName == "grenade.beancan.deployed" && permission.UserHasPermission(player.userID.ToString(), "noduds.use") == true)
 			{
-				PrintToChat("got here");
 				if (config.beancandud == false)
 				{
-					PrintToChat("cancel");
 					return true;
 				}
 				else if (config.beancandud == true)
